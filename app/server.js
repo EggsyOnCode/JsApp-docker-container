@@ -1,4 +1,4 @@
-require('dotenv').config();
+require("dotenv").config();
 let express = require("express");
 let path = require("path");
 let fs = require("fs");
@@ -6,7 +6,6 @@ let MongoClient = require("mongodb").MongoClient;
 let bodyParser = require("body-parser");
 let app = express();
 const cors = require("cors");
-
 
 app.use(cors());
 app.use(
@@ -27,7 +26,7 @@ app.get("/profile-picture", function (req, res) {
 });
 
 // use when starting application locally
-let mongoUrlLocal = `mongodb://admin:${process.env.PASSWORD}@localhost:27017`;
+let mongoUrlLocal = `mongodb://admin:${process.env.PASSWORD}@mongodb`;
 
 // use when starting application as docker container
 let mongoUrlDocker = `mongodb://admin:${process.env.PASSWORD}!@mongodb`;
